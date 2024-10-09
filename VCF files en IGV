@@ -1,0 +1,37 @@
+IGV (Integrative Genomics Viewer) es una herramienta muy útil para visualizar y explorar archivos VCF (Variant Call Format) y otros datos genómicos. Para revisar un archivo VCF en IGV, sigue estos pasos:
+
+1. Instalar IGV (si no lo tienes ya instalado)
+Descarga IGV desde su página oficial.
+Asegúrate de tener Java instalado, ya que IGV requiere Java para funcionar (puedes forzar la versión que prefieras como vimos anteriormente).
+Si prefieres instalar la versión de línea de comandos o trabajar en un servidor, sigue las instrucciones en la página.
+2. Cargar tu archivo VCF en IGV
+Abrir IGV:
+
+Si tienes IGV instalado con la interfaz gráfica, ábrelo ejecutando el archivo IGV o usando el comando:
+bash
+Copiar código
+java -Xmx4g -jar path/to/igv.jar
+Ajusta -Xmx4g dependiendo de la memoria que quieras asignar a IGV.
+Seleccionar el genoma de referencia:
+
+Antes de cargar tu archivo VCF, asegúrate de que el genoma de referencia que usaste en tu análisis está seleccionado en IGV.
+En la parte superior izquierda de IGV, hay un menú desplegable llamado "Genoma". Selecciona el genoma adecuado (por ejemplo, hg19, hg38, GRCh37, etc.). Si no está disponible, puedes cargar uno desde un archivo FASTA.
+Cargar el archivo VCF:
+
+Ve al menú "File" > "Load from File..." y selecciona tu archivo VCF.
+Si tienes un archivo indexado (un archivo .tbi), asegúrate de tenerlo en el mismo directorio que tu VCF, con el mismo nombre (excepto la extensión .tbi).
+Cargar datos de alineación (opcional):
+
+Si tienes un archivo BAM correspondiente a las alineaciones de tus lecturas, también puedes cargarlo para revisar las variantes en el contexto de las lecturas alineadas.
+Ve a "File" > "Load from File..." y selecciona el archivo BAM y su índice .bai.
+3. Explorar las variantes
+Una vez cargado el archivo VCF:
+
+Verás un track con tus variantes. Puedes hacer zoom en las regiones específicas de interés.
+Para navegar, puedes usar el campo de búsqueda de locus en la parte superior (puedes escribir un gen o región de interés).
+Al hacer clic en una variante, IGV te mostrará información detallada sobre la posición, el tipo de variante, la calidad, el gen afectado, entre otros.
+4. Visualización avanzada
+Filtrado de variantes: IGV permite filtrar variantes según varios criterios (calidad, tipo de variante, etc.). Puedes acceder a esta opción haciendo clic derecho en el track del VCF.
+Comparar variantes con el genoma de referencia: Al cargar el BAM junto con el VCF, puedes visualizar cómo las variantes coinciden o no con las lecturas alineadas.
+Personalización de tracks: Puedes agregar múltiples tracks (por ejemplo, anotaciones de genes, CNVs, etc.) para contextualizar mejor las variantes en tus datos.
+Con estos pasos, deberías poder revisar eficazmente tus archivos VCF en IGV y obtener una visualización detallada de tus variantes genómicas.
